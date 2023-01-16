@@ -1,13 +1,9 @@
 
 CXXFLAGS = -g -O2 -std=c++11
 
-#please remember to install modified dyninst into the following dir
-#e.g., cmake -DCMAKE_INSTALL_PREFIX=/usr/local
 DYNINST_ROOT = /usr/local
 
 DYNINST_BUILD_DIR = /path/to/your/dyninst/dyninst-build
-#remember to create a dyninst-build folder
-#e.g., DYNINST_BUILD_DIR = /home/dyninst4sgxminidep/dyninst-build
 
 ELFUTIL_LIB = $(DYNINST_BUILD_DIR)/elfutils/lib
 
@@ -26,4 +22,4 @@ modify: modify.cpp
 	g++ $(CXXFLAGS) $(INC) $(LIB) modify.cpp -o modify $(DEP)
 
 clean:
-	rm -f basic_mem_write modify parse
+	rm -f *.o basic_mem_write modify parse test_dynamic
